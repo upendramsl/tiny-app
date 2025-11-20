@@ -1,0 +1,17 @@
+[build]
+  functions = "netlify/functions"
+[[redirects]]
+  force = true
+  from = "/api/*"
+  status = 200
+  to = "/.netlify/functions/api/:splat"
+[[redirects]]
+  force = true
+  from = "/:code"
+  status = 200
+  to = "/.netlify/functions/api/:code"
+[[redirects]]
+  force = true
+  from = "/healthz"
+  status = 200
+  to = "/.netlify/functions/api/healthz"
