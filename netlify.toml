@@ -1,6 +1,7 @@
 [build]
 functions = "netlify/functions"
-command = "rm -rf .next .turbo && prisma generate && npm run build"base = "/"
+command = "rm -rf .next .turbo && prisma generate && npm run build"
+base = "/"
 publish = "dist"
 
 [[redirects]]
