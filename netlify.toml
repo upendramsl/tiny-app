@@ -1,20 +1,23 @@
 [build]
-  functions = "netlify/functions"
-  command = "npm run build"
-  base = "/"
-  publish = "dist"
+functions = "netlify/functions"
+command = "prisma generate && npm run build"
+base = "/"
+publish = "dist"
+
 [[redirects]]
-  force = true
-  from = "/api/*"
-  status = 200
-  to = "/.netlify/functions/api/:splat"
+force = true
+from = "/api/*"
+status = 200
+to = "/.netlify/functions/api/:splat"
+
 [[redirects]]
-  force = true
-  from = "/:code"
-  status = 200
-  to = "/.netlify/functions/api/:code"
+force = true
+from = "/code"
+status = 200
+to = "/.netlify/functions/api/code"
+
 [[redirects]]
-  force = true
-  from = "/healthz"
-  status = 200
-  to = "/.netlify/functions/api/healthz"
+force = true
+from = "/healthz"
+status = 200
+to = "/.netlify/functions/api/healthz"
